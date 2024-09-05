@@ -192,7 +192,6 @@ events.getEventCount = async (options) => {
 		).length;
 	}
 
-	// return await db.sortedSetCount(`events:time${filter ? `:${filter}` : ''}`, from || '-inf', to);
 	const baseKey = `events:time`;
 	const key = filter ? `${baseKey}:${filter}` : baseKey;
 	return await db.sortedSetCount(key, from || '-inf', to);
